@@ -339,7 +339,7 @@ main {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0;    
 }
 .modal .cerrar-modal {
     position: absolute;
@@ -350,6 +350,7 @@ main {
 }
 .modal .cerrar-modal img {
     width: 100%;
+    cursor: pointer;
 }
 
 .modal .formulario {
