@@ -40,6 +40,7 @@ const NuevoPresupuesto = ({
             placeholder="Añade tu Presupuesto"
             value={presupuesto}
             onChange={ e => setPresupuesto(Number(e.target.value))}
+            min={0}
           />
         </div>
         <input 
