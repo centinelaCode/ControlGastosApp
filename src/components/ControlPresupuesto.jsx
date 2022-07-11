@@ -1,11 +1,6 @@
 
 
-const ControlPresupuesto = ({presupuesto}) => {
-  console.log(presupuesto)
-  console.log(presupuesto.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  }))
+const ControlPresupuesto = ({presupuesto}) => { 
 
   const formatearCantidad = (cantidad) => {
     return cantidad.toLocaleString('en-US', {
