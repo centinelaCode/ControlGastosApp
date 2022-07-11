@@ -22,8 +22,6 @@ const NuevoPresupuesto = ({
     setMensaje('');
     setIsValidPresupuesto(true);
 
-    
-
   }
 
   return (
