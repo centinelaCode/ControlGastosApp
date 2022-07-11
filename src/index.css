@@ -127,7 +127,7 @@ header h1 {
     padding: 1rem;
     border: none;
     border-radius: 1rem;
-    text-align: center;
+    text-align: left;
     background-color: var(--gris-claro);
 }
 
