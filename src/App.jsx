@@ -40,14 +40,15 @@ function App() {
   }
 
   const guardarGasto = gasto => {
-    console.log(gasto)
+    // console.log(gasto)
     
     if(gasto.id) {
       // Se actualiza
 
       // se recorren con map y solo se cambia el gasto actualizado pero los demas gastos si se pasan
       const gastosActualizados = gastos.map(gastoState => gastoState.id === gasto.id ? gasto : gastoState)      
-      setGastos(gastosActualizados);
+      setGastos(gastosActualizados);  
+      setGastoEditar({})    
     } else {
       // se guarda un Nuevo Gasto
       gasto.id = generarId();
@@ -60,6 +61,11 @@ function App() {
     setTimeout(() => {
       setModal(false);
     },500);
+  }
+
+  const eliminarGasto = id => {
+    const gastosActualizados = gastos.filter( gasto => gasto.id !== id);
+    setGastos(gastosActualizados);
   }
 
   return (
@@ -78,6 +84,7 @@ function App() {
             <ListadoGastos 
               gastos={gastos}
               setGastoEditar={setGastoEditar}
+              eliminarGasto={eliminarGasto}
             />
           </main>
 
@@ -99,6 +106,7 @@ function App() {
           setAnimarModal={setAnimarModal}
           guardarGasto={guardarGasto}
           gastoEditar={gastoEditar}
+          setGastoEditar={setGastoEditar}
         />
       )}
 
