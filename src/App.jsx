@@ -32,6 +32,7 @@ function App() {
 
   const handleNuevoGasto =() => {
     setModal(true);
+    setGastoEditar({});
 
     setTimeout(() => {
       setAnimarModal(true);
@@ -86,6 +87,7 @@ function App() {
           animarModal={animarModal}
           setAnimarModal={setAnimarModal}
           guardarGasto={guardarGasto}
+          gastoEditar={gastoEditar}
         />
       )}
 
