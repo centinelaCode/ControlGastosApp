@@ -1,8 +1,15 @@
 import {formatearCantidad} from '../helpers'
 
+<<<<<<< HEAD
 const ControlPresupuesto = ({presupuesto}) => { 
   
 
+=======
+const ControlPresupuesto = ({ gastos, presupuesto }) => { 
+
+    
+  
+>>>>>>> 316fddfe3f2cebbc8156fbde0fb8177e83475740
 
   return (
     <div className="contenedor-presupuesto contenedor sombra dos-columnas">
@@ -17,11 +24,11 @@ const ControlPresupuesto = ({presupuesto}) => {
           <span>Disponible: </span>{formatearCantidad(0)}
         </p>
         <p>
-          <span>Gastado: </span>{formatearCantidad(0)}
+          <span>Gastado: </span>{formatearCantidad(gastado)}
         </p>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default ControlPresupuesto
