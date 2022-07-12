@@ -1,13 +1,9 @@
 import {formatearCantidad} from '../helpers'
 
-const ControlPresupuesto = ({presupuesto}) => { 
+const ControlPresupuesto = ({ gastos, presupuesto }) => { 
 
-  // const formatearCantidad = (cantidad) => {
-  //   return cantidad.toLocaleString('en-US', {
-  //     style: 'currency',
-  //     currency: 'USD'
-  //   })
-  // }
+    
+  
 
   return (
     <div className="contenedor-presupuesto contenedor sombra dos-columnas">
@@ -22,11 +18,11 @@ const ControlPresupuesto = ({presupuesto}) => {
           <span>Disponible: </span>{formatearCantidad(0)}
         </p>
         <p>
-          <span>Gastado: </span>{formatearCantidad(0)}
+          <span>Gastado: </span>{formatearCantidad(gastado)}
         </p>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default ControlPresupuesto
