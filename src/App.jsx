@@ -40,10 +40,21 @@ function App() {
   }
 
   const guardarGasto = gasto => {
-    gasto.id = generarId();
-    gasto.fecha = Date.now();
-    setGastos([...gastos, gasto]);
+    console.log(gasto)
+    
+    if(gasto.id) {
+      // Se actualiza
 
+      // se recorren con map y solo se cambia el gasto actualizado pero los demas gastos si se pasan
+      const gastosActualizados = gastos.map(gastoState => gastoState.id === gasto.id ? gasto : gastoState)      
+      setGastos(gastosActualizados);
+    } else {
+      // se guarda un Nuevo Gasto
+      gasto.id = generarId();
+      gasto.fecha = Date.now();
+      setGastos([...gastos, gasto]);
+    }
+    
     // para cerrar el modal con animacion
     setAnimarModal(false);      
     setTimeout(() => {
