@@ -6,6 +6,7 @@ import {formatearCantidad} from '../helpers'
 const ControlPresupuesto = ({ gastos, presupuesto }) => { 
 
   //states
+  const [porcentage, setPorcentage] = useState(0)
   const [disponible, setDisponible] = useState(0);
   const [gastado, setGastado] = useState(0)
 
@@ -17,11 +18,18 @@ const ControlPresupuesto = ({ gastos, presupuesto }) => {
       }, 0)
 
       const totalDisponible = presupuesto - totalGastado;
+
+      // const calculoPorcentage = (gastado/presupuesto)*100;
+      const calculoPorcentage = (((presupuesto - totalDisponible) / presupuesto) * 100).toFixed(2);      
+
       // console.log(totalDisponible, 'disponible');
       setDisponible(totalDisponible);
-
       // console.log(totalGastado, 'gastado') 
       setGastado(totalGastado);
+
+      setTimeout(() => {
+        setPorcentage(calculoPorcentage);
+      }, 1500)
     }, [gastos])
   
 
@@ -29,7 +37,7 @@ const ControlPresupuesto = ({ gastos, presupuesto }) => {
     <div className="contenedor-presupuesto contenedor sombra dos-columnas">
       <div>
         <CircularProgressbar 
-          value={50}
+          value={porcentage}
         />
       </div>
       <div className="contenido-presupuesto">
